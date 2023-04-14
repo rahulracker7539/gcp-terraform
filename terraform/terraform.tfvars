@@ -1,5 +1,5 @@
 region     = "europe-west2"
-project_id = "coen-rahul-kumar"
+project_id = "<project ID>"
 subnet_secondary_cidr = [
   {
     range_name    = "pod"
@@ -20,7 +20,7 @@ dataset_id = "vmo2_tech_test"
 bigquery_role_assignment = {
   vmo2_tech_test = {
     role = "roles/bigquery.dataEditor"
-    user = "mykola.kryvych@coen.rackspace.com"
+    user = "<user mail>"
   }
   /* dataset2 = {
     role = "roles/bigquery.viewer"

@@ -1,4 +1,38 @@
-<!-- BEGIN_TF_DOCS -->
+## Usage
+```
+region     = "europe-west2"
+project_id = "<project ID>"
+subnet_secondary_cidr = [
+  {
+    range_name    = "pod"
+    ip_cidr_range = "172.25.32.0/22"
+  },
+  {
+    range_name    = "service"
+    ip_cidr_range = "172.25.36.0/27"
+  }
+]
+gke_pod_range_name     = "pod"
+gke_service_range_name = "service"
+sva_account_id         = "gke-sva"
+subnet_ip_cidr_range   = "172.25.36.32/28"
+
+dataset_id = "vmo2_tech_test"
+
+bigquery_role_assignment = {
+  vmo2_tech_test = {
+    role = "roles/bigquery.dataEditor"
+    user = "<user mail>"
+  }
+  /* dataset2 = {
+    role = "roles/bigquery.viewer"
+    user = "user2@example.com"
+  } */
+}
+
+```
+
+
 ## Requirements
 
 | Name | Version |
@@ -46,8 +80,3 @@
 | <a name="input_subnet_ip_cidr_range"></a> [subnet\_ip\_cidr\_range](#input\_subnet\_ip\_cidr\_range) | provide subnet ip cidr range | `string` | n/a | yes |
 | <a name="input_subnet_secondary_cidr"></a> [subnet\_secondary\_cidr](#input\_subnet\_secondary\_cidr) | provide subnect secondary cidr | `list(any)` | n/a | yes |
 | <a name="input_sva_account_id"></a> [sva\_account\_id](#input\_sva\_account\_id) | provide service account id | `string` | n/a | yes |
-
-## Outputs
-
-No outputs.
-<!-- END_TF_DOCS -->
